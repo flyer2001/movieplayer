@@ -1,3 +1,23 @@
-PODFILE CHECKSUM: 1ea3ffe5b3550718970abe1b91a7f1878786200d
+PODS:
+  - Alamofire (5.2.2)
+  - Apexy (1.0.0):
+    - Alamofire (~> 5.0)
+    - Apexy/Core (= 1.0.0)
+  - Apexy/Core (1.0.0):
+    - Alamofire (~> 5.0)
+
+DEPENDENCIES:
+  - Apexy
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Apexy
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Apexy: 1d9f537c95a33b71c1652631efeca22ae05a40b8
+
+PODFILE CHECKSUM: 1ebf07ce91f8fc5b47afaf6b4ba2de51580c31ae
 
 COCOAPODS: 1.9.3

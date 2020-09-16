@@ -3,11 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		C059B3E30CF5040B2961BCEC /* Pods_TopMoviePlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8AF915217B8DC511E0D038E /* Pods_TopMoviePlayer.framework */; };
+		D70CF2BB2512660A00351137 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2BA2512660A00351137 /* ServiceLayer.swift */; };
+		D70CF2C025126FBB00351137 /* EmptyEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2BF25126FBB00351137 /* EmptyEndpoint.swift */; };
+		D70CF2C22512700A00351137 /* JSONEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2C12512700A00351137 /* JSONEndpoint.swift */; };
+		D70CF2C52512707800351137 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2C42512707800351137 /* Codable.swift */; };
+		D70CF2C7251271FE00351137 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2C6251271FE00351137 /* Constants.swift */; };
+		D70CF2C92512729200351137 /* PopularFilmsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2C82512729200351137 /* PopularFilmsEndpoint.swift */; };
+		D70CF2CB2512733800351137 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2CA2512733800351137 /* Film.swift */; };
+		D70CF2CE25127D9E00351137 /* PopularFilmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2CD25127D9E00351137 /* PopularFilmService.swift */; };
 		D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E874EC2510A03B003F1C39 /* AppDelegate.swift */; };
 		D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */; };
 		D7E874F92510A042003F1C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E874F82510A042003F1C39 /* Assets.xcassets */; };
@@ -21,6 +29,14 @@
 /* Begin PBXFileReference section */
 		0E7DC1072969A94FEAC0DB4C /* Pods-TopMoviePlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMoviePlayer.release.xcconfig"; path = "Target Support Files/Pods-TopMoviePlayer/Pods-TopMoviePlayer.release.xcconfig"; sourceTree = "<group>"; };
 		842889D34B8AA7B81F3861B0 /* Pods-TopMoviePlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMoviePlayer.debug.xcconfig"; path = "Target Support Files/Pods-TopMoviePlayer/Pods-TopMoviePlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		D70CF2BA2512660A00351137 /* ServiceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		D70CF2BF25126FBB00351137 /* EmptyEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEndpoint.swift; sourceTree = "<group>"; };
+		D70CF2C12512700A00351137 /* JSONEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEndpoint.swift; sourceTree = "<group>"; };
+		D70CF2C42512707800351137 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
+		D70CF2C6251271FE00351137 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D70CF2C82512729200351137 /* PopularFilmsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularFilmsEndpoint.swift; sourceTree = "<group>"; };
+		D70CF2CA2512733800351137 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		D70CF2CD25127D9E00351137 /* PopularFilmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularFilmService.swift; sourceTree = "<group>"; };
 		D7E874E92510A03B003F1C39 /* TopMoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E874EC2510A03B003F1C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E874F62510A03B003F1C39 /* TopMoviePlayer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TopMoviePlayer.xcdatamodel; sourceTree = "<group>"; };
@@ -55,6 +71,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D70CF2BC25126F7A00351137 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				D70CF2BE25126FA800351137 /* Base */,
+				D70CF2C82512729200351137 /* PopularFilmsEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		D70CF2BE25126FA800351137 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D70CF2BF25126FBB00351137 /* EmptyEndpoint.swift */,
+				D70CF2C12512700A00351137 /* JSONEndpoint.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D70CF2C32512706E00351137 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D70CF2C42512707800351137 /* Codable.swift */,
+				D70CF2C6251271FE00351137 /* Constants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D70CF2CC25127D8600351137 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D70CF2CD25127D9E00351137 /* PopularFilmService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D7E874E02510A03B003F1C39 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +138,7 @@
 		D7E875032510A130003F1C39 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				D7E875122510C157003F1C39 /* Models */,
 				D7E8750C2510AE17003F1C39 /* Business Logic */,
 				D7E8750B2510ADE5003F1C39 /* Presentation */,
 				D7E875082510ADAF003F1C39 /* Common */,
@@ -131,7 +183,10 @@
 		D7E8750C2510AE17003F1C39 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
-				D7E875122510C157003F1C39 /* Models */,
+				D70CF2CC25127D8600351137 /* Services */,
+				D70CF2C32512706E00351137 /* Common */,
+				D70CF2BC25126F7A00351137 /* Endpoint */,
+				D70CF2BA2512660A00351137 /* ServiceLayer.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -149,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E875132510C15C003F1C39 /* CoreData */,
+				D70CF2CA2512733800351137 /* Film.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +236,7 @@
 				D7E874E52510A03B003F1C39 /* Sources */,
 				D7E874E62510A03B003F1C39 /* Frameworks */,
 				D7E874E72510A03B003F1C39 /* Resources */,
+				C4027D6795D4DED6A4EBAF44 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,6 +294,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		C4027D6795D4DED6A4EBAF44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopMoviePlayer/Pods-TopMoviePlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TopMoviePlayer/Pods-TopMoviePlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TopMoviePlayer/Pods-TopMoviePlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E97448F19B6407688FC53D69 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,10 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70CF2C22512700A00351137 /* JSONEndpoint.swift in Sources */,
+				D70CF2CB2512733800351137 /* Film.swift in Sources */,
 				D7E875102510AE92003F1C39 /* MainScreenViewController.swift in Sources */,
+				D70CF2BB2512660A00351137 /* ServiceLayer.swift in Sources */,
+				D70CF2CE25127D9E00351137 /* PopularFilmService.swift in Sources */,
+				D70CF2C025126FBB00351137 /* EmptyEndpoint.swift in Sources */,
 				D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */,
+				D70CF2C7251271FE00351137 /* Constants.swift in Sources */,
+				D70CF2C52512707800351137 /* Codable.swift in Sources */,
 				D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */,
 				D7E875072510AD8A003F1C39 /* ApplicationController.swift in Sources */,
+				D70CF2C92512729200351137 /* PopularFilmsEndpoint.swift in Sources */,
 				D7E8750A2510ADBC003F1C39 /* UIWindow+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

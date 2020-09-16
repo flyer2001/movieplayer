@@ -7,4 +7,6 @@ target 'TopMoviePlayer' do
 
   # Pods for TopMoviePlayer
 
+pod 'Apexy'
+
 end

@@ -19,7 +19,10 @@ struct PopularFilmsEndpoint: JsonEndpoint {
             URLQueryItem(name: "language", value: Constants.russianLocale),
             URLQueryItem(name: "page", value: String(page))
         ]
-       return get(URL(string: "movie/popular")!, queryItems: queryItem)
+        var request = get(URL(string: "movie/popular")!, queryItems: queryItem)
+        request.timeoutInterval = Constants.timeOutIntervale
+
+        return request
     }
 
     func content(from response: URLResponse?, with body: Data) throws -> [Film] {

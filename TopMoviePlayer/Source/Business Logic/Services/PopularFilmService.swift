@@ -34,8 +34,12 @@ final class PopularFilmServiceImpl: PopularFilmService {
         let endpoint = PopularFilmsEndpoint(page: page)
         apiClient.request(endpoint) { result in
             switch result {
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure(let error ):
+                if let err = error.asAFError, err.isRequestRetryError {
+                    self.fetchPopularFilms(page: page, completion: completion)
+                } else {
+                    completion(.failure(error))
+                }
             case .success(let film):
                 completion(.success(film))
             }
@@ -43,3 +47,5 @@ final class PopularFilmServiceImpl: PopularFilmService {
     }
 
 }
+
+

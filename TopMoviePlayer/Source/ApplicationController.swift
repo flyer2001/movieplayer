@@ -19,7 +19,7 @@ final class ApplicationController {
 
 
     private static func showMainScreen() {
-        UIWindow.keyWindowTransit(to: MainScreenViewController())
+        UIWindow.keyWindowTransit(to: MainTabBarController())
     }
 
 }

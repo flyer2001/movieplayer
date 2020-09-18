@@ -9,5 +9,6 @@ target 'TopMoviePlayer' do
 
 pod 'Apexy'
 pod 'Kingfisher'
+pod ‘youtube-ios-player-helper’
 
 end

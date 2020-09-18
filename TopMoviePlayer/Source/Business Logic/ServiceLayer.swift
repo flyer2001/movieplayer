@@ -22,4 +22,6 @@ final class ServiceLayer {
 
     private(set) lazy var popularFilmService: PopularFilmService = PopularFilmServiceImpl(apiClient: apiClient)
 
+    private(set) lazy var videoService: VideoService = VideoServiceImpl(apiClient: apiClient)
+
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Endpoint для получения списка популярных фильмов
 struct PopularFilmsEndpoint: JsonEndpoint {
 
     typealias Content = [Film]

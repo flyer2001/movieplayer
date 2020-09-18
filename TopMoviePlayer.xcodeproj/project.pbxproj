@@ -28,6 +28,9 @@
 		D712701D25148C52007484D2 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701C25148C52007484D2 /* UITableView+extension.swift */; };
 		D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701E25148C93007484D2 /* NibRepresentable.swift */; };
 		D71270212515181D007484D2 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270202515181C007484D2 /* FavoriteButton.swift */; };
+		D7127023251522DE007484D2 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7127022251522DE007484D2 /* Video.swift */; };
+		D7127025251523B3007484D2 /* VideoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7127024251523B3007484D2 /* VideoEndpoint.swift */; };
+		D712702725152503007484D2 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702625152503007484D2 /* VideoService.swift */; };
 		D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */; };
 		D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E874EC2510A03B003F1C39 /* AppDelegate.swift */; };
 		D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */; };
@@ -60,6 +63,9 @@
 		D712701C25148C52007484D2 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		D712701E25148C93007484D2 /* NibRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibRepresentable.swift; sourceTree = "<group>"; };
 		D71270202515181C007484D2 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		D7127022251522DE007484D2 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		D7127024251523B3007484D2 /* VideoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEndpoint.swift; sourceTree = "<group>"; };
+		D712702625152503007484D2 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
 		D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePresenter.swift; sourceTree = "<group>"; };
 		D7E874E92510A03B003F1C39 /* TopMoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E874EC2510A03B003F1C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 			children = (
 				D70CF2BE25126FA800351137 /* Base */,
 				D70CF2C82512729200351137 /* PopularFilmsEndpoint.swift */,
+				D7127024251523B3007484D2 /* VideoEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -124,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D70CF2CD25127D9E00351137 /* PopularFilmService.swift */,
+				D712702625152503007484D2 /* VideoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,6 +286,7 @@
 			children = (
 				D7E875132510C15C003F1C39 /* CoreData */,
 				D70CF2CA2512733800351137 /* Film.swift */,
+				D7127022251522DE007484D2 /* Video.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,14 +428,17 @@
 				D70CF2CB2512733800351137 /* Film.swift in Sources */,
 				D70CF2BB2512660A00351137 /* ServiceLayer.swift in Sources */,
 				D70CF2CE25127D9E00351137 /* PopularFilmService.swift in Sources */,
+				D712702725152503007484D2 /* VideoService.swift in Sources */,
 				D70CF2C025126FBB00351137 /* EmptyEndpoint.swift in Sources */,
 				D70CF2D92513BFF500351137 /* FavoriteMovieViewController.swift in Sources */,
+				D7127025251523B3007484D2 /* VideoEndpoint.swift in Sources */,
 				D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */,
 				D712701D25148C52007484D2 /* UITableView+extension.swift in Sources */,
 				D70CF2C7251271FE00351137 /* Constants.swift in Sources */,
 				D71270212515181D007484D2 /* FavoriteButton.swift in Sources */,
 				D70CF2C52512707800351137 /* Codable.swift in Sources */,
 				D71270162513D9EF007484D2 /* TopMovieView.swift in Sources */,
+				D7127023251522DE007484D2 /* Video.swift in Sources */,
 				D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */,
 				D70CF2D52513BE8400351137 /* MainTabBarController.swift in Sources */,
 				D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */,

@@ -7,24 +7,35 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class FavoriteMovieViewController: UIViewController {
+
+    let playerView = YTPlayerView()
+    let service = ServiceLayer.shared.videoService
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        playerView.load(withVideoId: "sog_5eZFSdE")
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(playerView)
+        playerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        playerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        playerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        playerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getVideo() {
+        service.fetchPopularFilms(filmId: 80079) { result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let video):
+                self.playerView.load(withVideoId: video.key)
+            }
+        }
     }
-    */
+
 
 }

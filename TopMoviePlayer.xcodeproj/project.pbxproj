@@ -21,8 +21,13 @@
 		D70CF2DA2513BFF500351137 /* FavoriteMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70CF2D82513BFF500351137 /* FavoriteMovieViewController.xib */; };
 		D70CF2DD2513C0A800351137 /* TopMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70CF2DB2513C0A800351137 /* TopMovieViewController.xib */; };
 		D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2DC2513C0A800351137 /* TopMovieViewController.swift */; };
-		D71270132513D9B6007484D2 /* TopMovieDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270122513D9B6007484D2 /* TopMovieDate.swift */; };
+		D71270132513D9B6007484D2 /* TopMovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270122513D9B6007484D2 /* TopMovieData.swift */; };
 		D71270162513D9EF007484D2 /* TopMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270152513D9EF007484D2 /* TopMovieView.swift */; };
+		D712701A25148751007484D2 /* TopViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701825148751007484D2 /* TopViewTableViewCell.swift */; };
+		D712701B25148751007484D2 /* TopViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D712701925148751007484D2 /* TopViewTableViewCell.xib */; };
+		D712701D25148C52007484D2 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701C25148C52007484D2 /* UITableView+extension.swift */; };
+		D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701E25148C93007484D2 /* NibRepresentable.swift */; };
+		D71270212515181D007484D2 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270202515181C007484D2 /* FavoriteButton.swift */; };
 		D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */; };
 		D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E874EC2510A03B003F1C39 /* AppDelegate.swift */; };
 		D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */; };
@@ -48,8 +53,13 @@
 		D70CF2D82513BFF500351137 /* FavoriteMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteMovieViewController.xib; sourceTree = "<group>"; };
 		D70CF2DB2513C0A800351137 /* TopMovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopMovieViewController.xib; sourceTree = "<group>"; };
 		D70CF2DC2513C0A800351137 /* TopMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMovieViewController.swift; sourceTree = "<group>"; };
-		D71270122513D9B6007484D2 /* TopMovieDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieDate.swift; sourceTree = "<group>"; };
+		D71270122513D9B6007484D2 /* TopMovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieData.swift; sourceTree = "<group>"; };
 		D71270152513D9EF007484D2 /* TopMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieView.swift; sourceTree = "<group>"; };
+		D712701825148751007484D2 /* TopViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewTableViewCell.swift; sourceTree = "<group>"; };
+		D712701925148751007484D2 /* TopViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableViewCell.xib; sourceTree = "<group>"; };
+		D712701C25148C52007484D2 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
+		D712701E25148C93007484D2 /* NibRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibRepresentable.swift; sourceTree = "<group>"; };
+		D71270202515181C007484D2 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePresenter.swift; sourceTree = "<group>"; };
 		D7E874E92510A03B003F1C39 /* TopMoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E874EC2510A03B003F1C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +148,7 @@
 		D71270112513D99F007484D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D71270122513D9B6007484D2 /* TopMovieDate.swift */,
+				D71270122513D9B6007484D2 /* TopMovieData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				D71270152513D9EF007484D2 /* TopMovieView.swift */,
+				D712701825148751007484D2 /* TopViewTableViewCell.swift */,
+				D712701925148751007484D2 /* TopViewTableViewCell.xib */,
+				D71270202515181C007484D2 /* FavoriteButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				D7E875092510ADBC003F1C39 /* UIWindow+extension.swift */,
+				D712701C25148C52007484D2 /* UITableView+extension.swift */,
+				D712701E25148C93007484D2 /* NibRepresentable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -344,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E874FC2510A042003F1C39 /* LaunchScreen.storyboard in Resources */,
+				D712701B25148751007484D2 /* TopViewTableViewCell.xib in Resources */,
 				D70CF2DD2513C0A800351137 /* TopMovieViewController.xib in Resources */,
 				D7E874F92510A042003F1C39 /* Assets.xcassets in Resources */,
 				D70CF2DA2513BFF500351137 /* FavoriteMovieViewController.xib in Resources */,
@@ -406,17 +422,21 @@
 				D70CF2C025126FBB00351137 /* EmptyEndpoint.swift in Sources */,
 				D70CF2D92513BFF500351137 /* FavoriteMovieViewController.swift in Sources */,
 				D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */,
+				D712701D25148C52007484D2 /* UITableView+extension.swift in Sources */,
 				D70CF2C7251271FE00351137 /* Constants.swift in Sources */,
+				D71270212515181D007484D2 /* FavoriteButton.swift in Sources */,
 				D70CF2C52512707800351137 /* Codable.swift in Sources */,
 				D71270162513D9EF007484D2 /* TopMovieView.swift in Sources */,
 				D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */,
 				D70CF2D52513BE8400351137 /* MainTabBarController.swift in Sources */,
 				D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */,
+				D712701A25148751007484D2 /* TopViewTableViewCell.swift in Sources */,
 				D7E875072510AD8A003F1C39 /* ApplicationController.swift in Sources */,
+				D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */,
 				D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */,
 				D70CF2C92512729200351137 /* PopularFilmsEndpoint.swift in Sources */,
 				D7E8750A2510ADBC003F1C39 /* UIWindow+extension.swift in Sources */,
-				D71270132513D9B6007484D2 /* TopMovieDate.swift in Sources */,
+				D71270132513D9B6007484D2 /* TopMovieData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

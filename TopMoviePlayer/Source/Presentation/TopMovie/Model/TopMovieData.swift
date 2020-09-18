@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TopMovieDate {
+struct TopMovieData {
     let id: Int
     let title: String
     let description: String

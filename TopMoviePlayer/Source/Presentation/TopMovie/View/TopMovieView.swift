@@ -12,5 +12,5 @@ protocol TopMovieView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func fetchingError(description: String)
-    func fetchFilms(_ films: [TopMovieDate] )
+    func fetchFilmsCompleted()
 }

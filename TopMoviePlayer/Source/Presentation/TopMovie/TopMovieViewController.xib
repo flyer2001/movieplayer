@@ -13,6 +13,7 @@
                 <outlet property="activityIndicator" destination="Nhe-KD-tyz" id="Xpc-ha-zrw"/>
                 <outlet property="errorLabel" destination="pHl-58-aBg" id="JIB-9l-wPC"/>
                 <outlet property="retryButton" destination="y7g-4m-siU" id="PNw-bv-s9i"/>
+                <outlet property="tableView" destination="faa-pC-qQt" id="UtZ-cQ-Xs3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,16 +42,28 @@
                         <action selector="retryButtonPressed:" destination="-1" eventType="touchUpInside" id="wmd-P3-YlO"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="faa-pC-qQt">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YWj-4m-UCP"/>
+                        <outlet property="delegate" destination="-1" id="3Ml-ca-IPm"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="faa-pC-qQt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0Ix-CX-Pfk"/>
                 <constraint firstItem="Nhe-KD-tyz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1M4-xh-b85"/>
                 <constraint firstItem="pHl-58-aBg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="1uR-KO-oS4"/>
                 <constraint firstItem="Nhe-KD-tyz" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="6Qa-Gn-Khe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="faa-pC-qQt" secondAttribute="bottom" id="7bQ-PM-7f0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pHl-58-aBg" secondAttribute="trailing" constant="5" id="8n9-92-gZg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="faa-pC-qQt" secondAttribute="trailing" id="Un8-jr-jT4"/>
                 <constraint firstItem="y7g-4m-siU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="WYH-j3-1b3"/>
                 <constraint firstItem="pHl-58-aBg" firstAttribute="top" secondItem="Nhe-KD-tyz" secondAttribute="bottom" constant="15" id="aYe-fp-vZo"/>
                 <constraint firstItem="y7g-4m-siU" firstAttribute="top" secondItem="pHl-58-aBg" secondAttribute="bottom" constant="15" id="cK1-GT-WDF"/>
+                <constraint firstItem="faa-pC-qQt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vsn-Wg-GdB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>

@@ -19,18 +19,20 @@ final class TopMovieViewController: UIViewController {
             retryButton.layer.cornerRadius = 10
         }
     }
+    @IBOutlet private var tableView: UITableView!
 
     // MARK: - Private Properties
 
     private let topMoviePresenter = TopMoviePresenter(popularFilmService: ServiceLayer.shared.popularFilmService)
-    private var films: [TopMovieDate] = []
 
     // MARK: - ViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        topMoviePresenter.attachView(self)
+        topMoviePresenter.topMoviewView = self
         topMoviePresenter.fetchFilms()
+        tableView.registerCellNib(TopViewTableViewCell.self)
+        tableView.prefetchDataSource = self
     }
 
     // MARK: - IBActions
@@ -42,9 +44,28 @@ final class TopMovieViewController: UIViewController {
         topMoviePresenter.fetchFilms()
     }
 
+    // MARK: - Private Methods
+
+    private func isLoadingCell(for indexPath: IndexPath) -> Bool {
+        indexPath.row >= topMoviePresenter.currentFilmsCount - 1
+    }
+
+    private func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+      let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
+      let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
+      return Array(indexPathsIntersection)
+    }
+
 }
 
+// MARK: - TopMovieView
+
 extension TopMovieViewController: TopMovieView {
+
+    func fetchFilmsCompleted() {
+        tableView.reloadData()
+    }
+
     func startLoading() {
         activityIndicator.startAnimating()
     }
@@ -59,9 +80,35 @@ extension TopMovieViewController: TopMovieView {
         self.retryButton.isHidden = false
     }
 
-    func fetchFilms(_ films: [TopMovieDate]) {
-        print(films)
-        self.films = films
+}
+
+// MARK: - UITableViewDataSourcePrefetching
+
+extension TopMovieViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLoadingCell) {
+            topMoviePresenter.fetchFilms()
+        }
+    }
+
+}
+
+// MARK: - UITableViewDataSource
+
+extension TopMovieViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        self.topMoviePresenter.currentFilmsCount
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(TopViewTableViewCell.self, for: indexPath)
+        if isLoadingCell(for: indexPath) {
+            cell.configure(with: .none)
+        } else {
+            cell.configure(with: topMoviePresenter.getFilmData(at: indexPath.row))
+        }
+        return cell
     }
 
 

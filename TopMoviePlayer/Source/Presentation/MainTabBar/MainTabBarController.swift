@@ -13,7 +13,11 @@ final class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let topMovieViewController = TopMovieViewController()
+        topMovieViewController.tabBarItem.title = "Топ фильмы"
+        topMovieViewController.tabBarItem.image = UIImage(named: "film")
         let favoriteMovieViewController = FavoriteMovieViewController()
+        favoriteMovieViewController.tabBarItem.title = "Избранные"
+        favoriteMovieViewController.tabBarItem.image = UIImage(named: "star")
         self.viewControllers = [topMovieViewController, favoriteMovieViewController]
 
     }

@@ -10,10 +10,18 @@ import Foundation
 
 final class TopMoviePresenter {
 
+    // MARK: - Public Properties
+
+    weak var topMoviewView: TopMovieView?
+    var currentFilmsCount: Int {
+        filmsData.count
+    }
+
     // MARK: - Private Properties
 
+    private var currentPage = 1
+    private var filmsData: [TopMovieData] = []
     private let popularFilmService: PopularFilmService
-    private weak var topMoviewView: TopMovieView?
 
     // MARK: - Initializers
 
@@ -23,30 +31,32 @@ final class TopMoviePresenter {
 
     // MARK: - Public Methods
 
-    func attachView(_ view: TopMovieView) {
-        topMoviewView = view
+    func getFilmData(at index: Int) -> TopMovieData? {
+        guard filmsData.indices.contains(index) else { return nil }
+        return filmsData[index]
     }
 
-    func fetchFilms(page: Int = 1) {
+    func fetchFilms() {
         topMoviewView?.startLoading()
-        popularFilmService.fetchPopularFilms(page: page) { [weak self] result in
+        popularFilmService.fetchPopularFilms(page: currentPage) { [weak self] result in
             guard let self = self else { return }
             self.topMoviewView?.finishLoading()
             switch result {
             case .failure(let error):
                 self.topMoviewView?.fetchingError(description: error.localizedDescription)
             case .success(let films):
+                // TODO: - Получить максимум страниц и отработать конец ленты
                 let mappedViewData = films.map {
-                    TopMovieDate(
+                    TopMovieData(
                         id: $0.id,
                         title: $0.title,
                         description: $0.overview,
                         posterURL: URL(string: Constants.imageBasePath + $0.posterPath))
                 }
-                self.topMoviewView?.fetchFilms(mappedViewData)
+                self.filmsData.append(contentsOf: mappedViewData)
+                self.topMoviewView?.fetchFilmsCompleted()
+                self.currentPage += 1
             }
         }
     }
-
-
 }

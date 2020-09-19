@@ -22,11 +22,13 @@ final class TopMoviePresenter {
     private var currentPage = 1
     private var filmsData: [TopMovieData] = []
     private let popularFilmService: PopularFilmService
+    private let storageService: StorageService
 
     // MARK: - Initializers
 
-    init(popularFilmService: PopularFilmService) {
+    init(popularFilmService: PopularFilmService, storageService: StorageService) {
         self.popularFilmService = popularFilmService
+        self.storageService = storageService
     }
 
     // MARK: - Public Methods
@@ -34,6 +36,18 @@ final class TopMoviePresenter {
     func getFilmData(at index: Int) -> TopMovieData? {
         guard filmsData.indices.contains(index) else { return nil }
         return filmsData[index]
+    }
+
+    func addToFavorite(_ filmId: Int) {
+        guard let index = filmsData.firstIndex(where: { $0.id == filmId}) else { return }
+        filmsData[index].isFavorite = true
+        storageService.addToFavorite(filmsData[index])
+    }
+
+    func removeFromFavorite(_ filmId: Int) {
+        guard let index = filmsData.firstIndex(where: { $0.id == filmId}) else { return }
+        filmsData[index].isFavorite = false
+        storageService.deleteFromFavorite(filmsData[index])
     }
 
     func fetchFilms() {
@@ -51,7 +65,8 @@ final class TopMoviePresenter {
                         id: $0.id,
                         title: $0.title,
                         description: $0.overview,
-                        posterURL: URL(string: Constants.imageBasePath + $0.posterPath))
+                        posterURL: URL(string: Constants.imageBasePath + $0.posterPath),
+                        isFavorite: self.storageService.isFavorite(id: $0.id))
                 }
                 self.filmsData.append(contentsOf: mappedViewData)
                 self.topMoviewView?.fetchFilmsCompleted()

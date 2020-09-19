@@ -9,6 +9,11 @@
 import UIKit
 import Kingfisher
 
+protocol TopViewTableViewCellDelegate: AnyObject {
+    func addToFavorite(filmId: Int)
+    func removeFromFavorite(filmId: Int)
+}
+
 class TopViewTableViewCell: NibTableViewCell {
 
     // MARK: - IBOutlet
@@ -21,6 +26,7 @@ class TopViewTableViewCell: NibTableViewCell {
 
     // MARK: - Public Properties
 
+    weak var delegate: TopViewTableViewCellDelegate?
     var id: Int = 0
     var isFavorite: Bool = false {
         didSet {
@@ -53,14 +59,13 @@ class TopViewTableViewCell: NibTableViewCell {
     // MARK: - Public Methods
 
     func configure(with film: TopMovieData?) {
-        // TODO: - продумать логику как сверять с CoreData
-        isFavorite = false
         if let film = film {
             id = film.id
             titleText = film.title
             descritptionText = film.description
             posterImageURL = film.posterURL
             activityIndicator.stopAnimating()
+            isFavorite = film.isFavorite
             isHidenAll(false)
 
 
@@ -73,8 +78,13 @@ class TopViewTableViewCell: NibTableViewCell {
     // MARK: - IBActions
 
     @IBAction func favoriteButtonPressed(_ sender: Any) {
-        // TODO: Добавить делегат и передать в CoreData с
         isFavorite.toggle()
+        switch isFavorite {
+        case true:
+            delegate?.addToFavorite(filmId: id)
+        case false:
+            delegate?.removeFromFavorite(filmId: id)
+        }
     }
 
 

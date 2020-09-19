@@ -23,7 +23,9 @@ final class TopMovieViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private let topMoviePresenter = TopMoviePresenter(popularFilmService: ServiceLayer.shared.popularFilmService)
+    private let topMoviePresenter = TopMoviePresenter(
+        popularFilmService: ServiceLayer.shared.popularFilmService,
+        storageService: ServiceLayer.shared.storageService)
 
     // MARK: - ViewController
 
@@ -50,10 +52,20 @@ final class TopMovieViewController: UIViewController {
         indexPath.row >= topMoviePresenter.currentFilmsCount - 1
     }
 
-    private func visibleIndexPathsToReload(intersecting indexPaths: [IndexPath]) -> [IndexPath] {
-      let indexPathsForVisibleRows = tableView.indexPathsForVisibleRows ?? []
-      let indexPathsIntersection = Set(indexPathsForVisibleRows).intersection(indexPaths)
-      return Array(indexPathsIntersection)
+}
+
+// MARK: - TopViewTableViewCellDelegate
+
+extension TopMovieViewController: TopViewTableViewCellDelegate {
+
+    func addToFavorite(filmId: Int) {
+        topMoviePresenter.addToFavorite(filmId)
+        //tableView.reloadData()
+    }
+
+    func removeFromFavorite(filmId: Int) {
+        topMoviePresenter.removeFromFavorite(filmId)
+        //tableView.reloadData()
     }
 
 }
@@ -103,11 +115,8 @@ extension TopMovieViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(TopViewTableViewCell.self, for: indexPath)
-        if isLoadingCell(for: indexPath) {
-            cell.configure(with: .none)
-        } else {
-            cell.configure(with: topMoviePresenter.getFilmData(at: indexPath.row))
-        }
+        cell.delegate = self
+        cell.configure(with: topMoviePresenter.getFilmData(at: indexPath.row))
         return cell
     }
 

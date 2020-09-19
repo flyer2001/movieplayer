@@ -31,6 +31,9 @@
 		D7127023251522DE007484D2 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7127022251522DE007484D2 /* Video.swift */; };
 		D7127025251523B3007484D2 /* VideoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7127024251523B3007484D2 /* VideoEndpoint.swift */; };
 		D712702725152503007484D2 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702625152503007484D2 /* VideoService.swift */; };
+		D712702A2515DBD3007484D2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270292515DBD3007484D2 /* StorageService.swift */; };
+		D712702D2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702B2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift */; };
+		D712702E2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702C2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift */; };
 		D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */; };
 		D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E874EC2510A03B003F1C39 /* AppDelegate.swift */; };
 		D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */; };
@@ -66,6 +69,9 @@
 		D7127022251522DE007484D2 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D7127024251523B3007484D2 /* VideoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEndpoint.swift; sourceTree = "<group>"; };
 		D712702625152503007484D2 /* VideoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		D71270292515DBD3007484D2 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		D712702B2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopMovieDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D712702C2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopMovieDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePresenter.swift; sourceTree = "<group>"; };
 		D7E874E92510A03B003F1C39 /* TopMoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E874EC2510A03B003F1C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		D71270282515DB9D007484D2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				D71270292515DBD3007484D2 /* StorageService.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		D7E874E02510A03B003F1C39 = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +275,7 @@
 		D7E8750C2510AE17003F1C39 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				D71270282515DB9D007484D2 /* Persistence */,
 				D70CF2CC25127D8600351137 /* Services */,
 				D70CF2C32512706E00351137 /* Common */,
 				D70CF2BC25126F7A00351137 /* Endpoint */,
@@ -294,6 +309,8 @@
 		D7E875132510C15C003F1C39 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				D712702B2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift */,
+				D712702C2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift */,
 				D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -439,16 +456,19 @@
 				D70CF2C52512707800351137 /* Codable.swift in Sources */,
 				D71270162513D9EF007484D2 /* TopMovieView.swift in Sources */,
 				D7127023251522DE007484D2 /* Video.swift in Sources */,
+				D712702D2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift in Sources */,
 				D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */,
 				D70CF2D52513BE8400351137 /* MainTabBarController.swift in Sources */,
 				D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */,
 				D712701A25148751007484D2 /* TopViewTableViewCell.swift in Sources */,
 				D7E875072510AD8A003F1C39 /* ApplicationController.swift in Sources */,
 				D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */,
+				D712702E2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift in Sources */,
 				D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */,
 				D70CF2C92512729200351137 /* PopularFilmsEndpoint.swift in Sources */,
 				D7E8750A2510ADBC003F1C39 /* UIWindow+extension.swift in Sources */,
 				D71270132513D9B6007484D2 /* TopMovieData.swift in Sources */,
+				D712702A2515DBD3007484D2 /* StorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

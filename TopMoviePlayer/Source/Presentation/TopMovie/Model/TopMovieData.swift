@@ -13,4 +13,16 @@ struct TopMovieData {
     let title: String
     let description: String
     let posterURL: URL?
+    var isFavorite: Bool
+}
+
+extension TopMovieData {
+
+    init(topMovieDataModel: TopMovieDataModel) {
+        id = Int(topMovieDataModel.id)
+        title = topMovieDataModel.title
+        description = topMovieDataModel.description_
+        posterURL = topMovieDataModel.posterURL
+        isFavorite = true
+    }
 }

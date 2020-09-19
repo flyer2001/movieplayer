@@ -91,9 +91,9 @@ extension TopMovieViewController: TopMovieView {
     }
 
     func fetchingError(description: String) {
-        self.errorLabel.isHidden = false
-        self.errorLabel.text = description
-        self.retryButton.isHidden = false
+        errorLabel.isHidden = false
+        errorLabel.text = description
+        retryButton.isHidden = false
     }
 
 }
@@ -125,5 +125,16 @@ extension TopMovieViewController: UITableViewDataSource {
     }
 
 
+}
+
+// MARK: - UITableViewDelegate
+
+extension TopMovieViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectedFilm = presenter.getFilmData(at: indexPath.row) else { return }
+        let youtubePlayerViewController = YoutubePlayerViewController(filmId: selectedFilm.id)
+        present(youtubePlayerViewController, animated: true)
+    }
 }
 

@@ -16,7 +16,7 @@ struct VideoError: Error {
 protocol VideoService: AnyObject {
 
     // Получить id трейлера на Youtbe
-    func fetchPopularFilms(filmId: Int, completion: @escaping (Result<Video, Error>) -> Void)
+    func fetchYoutubeKey(filmId: Int, completion: @escaping (Result<Video, Error>) -> Void)
 }
 
 final class VideoServiceImpl: VideoService {
@@ -33,12 +33,16 @@ final class VideoServiceImpl: VideoService {
 
     // MARK: - Public Methods
 
-    func fetchPopularFilms(filmId: Int, completion: @escaping (Result<Video, Error>) -> Void) {
+    func fetchYoutubeKey(filmId: Int, completion: @escaping (Result<Video, Error>) -> Void) {
         let endpoint = VideoEndpoint(id: filmId)
         apiClient.request(endpoint) { result in
             switch result {
             case .failure(let error):
-                completion(.failure(error))
+                if let err = error.asAFError, err.isRequestRetryError {
+                    self.fetchYoutubeKey(filmId: filmId, completion: completion)
+                } else {
+                    completion(.failure(error))
+                }
             case .success(let videos):
                 if let video = videos.first(where: { $0.site == "YouTube"}) {
                     completion(.success(video))

@@ -1,5 +1,5 @@
 //
-//  TopViewTableViewCell.swift
+//  TopMovieTableViewCell.swift
 //  TopMoviePlayer
 //
 //  Created by Sergei Popyvanov on 18.09.2020.
@@ -9,12 +9,12 @@
 import UIKit
 import Kingfisher
 
-protocol TopViewTableViewCellDelegate: AnyObject {
+protocol TopMovieTableViewCellDelegate: AnyObject {
     func addToFavorite(filmId: Int)
     func removeFromFavorite(filmId: Int)
 }
 
-class TopViewTableViewCell: NibTableViewCell {
+class TopMovieTableViewCell: NibTableViewCell {
 
     // MARK: - IBOutlet
 
@@ -26,7 +26,7 @@ class TopViewTableViewCell: NibTableViewCell {
 
     // MARK: - Public Properties
 
-    weak var delegate: TopViewTableViewCellDelegate?
+    weak var delegate: TopMovieTableViewCellDelegate?
     var id: Int = 0
     var isFavorite: Bool = false {
         didSet {

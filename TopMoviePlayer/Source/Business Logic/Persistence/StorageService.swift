@@ -47,7 +47,7 @@ final class StorageServiceImpl: StorageService  {
     func deleteFromFavorite(_ film: TopMovieData) {
         let context = backgroundContext
         let request: NSFetchRequest<TopMovieDataModel> = TopMovieDataModel.fetchRequest()
-        request.predicate = NSPredicate(format: "id = %@", film.id)
+        request.predicate = NSPredicate(format: "id = %@", String(film.id))
         let fetchResults = (try? context.fetch(request)) ?? []
         guard let deleteObject = fetchResults.first else { return }
         context.delete(deleteObject)

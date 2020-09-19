@@ -35,7 +35,9 @@ final class TopMoviePresenter {
 
     func getFilmData(at index: Int) -> TopMovieData? {
         guard filmsData.indices.contains(index) else { return nil }
-        return filmsData[index]
+        var findFilmData = filmsData[index]
+        findFilmData.isFavorite = storageService.isFavorite(id: findFilmData.id)
+        return findFilmData
     }
 
     func addToFavorite(_ filmId: Int) {

@@ -23,7 +23,7 @@ final class TopMovieViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private let topMoviePresenter = TopMoviePresenter(
+    private let presenter = TopMoviePresenter(
         popularFilmService: ServiceLayer.shared.popularFilmService,
         storageService: ServiceLayer.shared.storageService)
 
@@ -31,10 +31,16 @@ final class TopMovieViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        topMoviePresenter.topMoviewView = self
-        topMoviePresenter.fetchFilms()
-        tableView.registerCellNib(TopViewTableViewCell.self)
+
+        presenter.topMoviewView = self
+        presenter.fetchFilms()
+        tableView.registerCellNib(TopMovieTableViewCell.self)
         tableView.prefetchDataSource = self
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - IBActions
@@ -43,29 +49,27 @@ final class TopMovieViewController: UIViewController {
         activityIndicator.startAnimating()
         errorLabel.isHidden = true
         retryButton.isHidden = true
-        topMoviePresenter.fetchFilms()
+        presenter.fetchFilms()
     }
 
     // MARK: - Private Methods
 
     private func isLoadingCell(for indexPath: IndexPath) -> Bool {
-        indexPath.row >= topMoviePresenter.currentFilmsCount - 1
+        indexPath.row >= presenter.currentFilmsCount - 1
     }
 
 }
 
 // MARK: - TopViewTableViewCellDelegate
 
-extension TopMovieViewController: TopViewTableViewCellDelegate {
+extension TopMovieViewController: TopMovieTableViewCellDelegate {
 
     func addToFavorite(filmId: Int) {
-        topMoviePresenter.addToFavorite(filmId)
-        //tableView.reloadData()
+        presenter.addToFavorite(filmId)
     }
 
     func removeFromFavorite(filmId: Int) {
-        topMoviePresenter.removeFromFavorite(filmId)
-        //tableView.reloadData()
+        presenter.removeFromFavorite(filmId)
     }
 
 }
@@ -99,7 +103,7 @@ extension TopMovieViewController: TopMovieView {
 extension TopMovieViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         if indexPaths.contains(where: isLoadingCell) {
-            topMoviePresenter.fetchFilms()
+            presenter.fetchFilms()
         }
     }
 
@@ -110,15 +114,16 @@ extension TopMovieViewController: UITableViewDataSourcePrefetching {
 extension TopMovieViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.topMoviePresenter.currentFilmsCount
+        self.presenter.currentFilmsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(TopViewTableViewCell.self, for: indexPath)
+        let cell = tableView.dequeueReusableCell(TopMovieTableViewCell.self, for: indexPath)
         cell.delegate = self
-        cell.configure(with: topMoviePresenter.getFilmData(at: indexPath.row))
+        cell.configure(with: presenter.getFilmData(at: indexPath.row))
         return cell
     }
 
 
 }
+

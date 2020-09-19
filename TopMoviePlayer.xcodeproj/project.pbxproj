@@ -23,8 +23,8 @@
 		D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70CF2DC2513C0A800351137 /* TopMovieViewController.swift */; };
 		D71270132513D9B6007484D2 /* TopMovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270122513D9B6007484D2 /* TopMovieData.swift */; };
 		D71270162513D9EF007484D2 /* TopMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270152513D9EF007484D2 /* TopMovieView.swift */; };
-		D712701A25148751007484D2 /* TopViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701825148751007484D2 /* TopViewTableViewCell.swift */; };
-		D712701B25148751007484D2 /* TopViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D712701925148751007484D2 /* TopViewTableViewCell.xib */; };
+		D712701A25148751007484D2 /* TopMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701825148751007484D2 /* TopMovieTableViewCell.swift */; };
+		D712701B25148751007484D2 /* TopMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D712701925148751007484D2 /* TopMovieTableViewCell.xib */; };
 		D712701D25148C52007484D2 /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701C25148C52007484D2 /* UITableView+extension.swift */; };
 		D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712701E25148C93007484D2 /* NibRepresentable.swift */; };
 		D71270212515181D007484D2 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270202515181C007484D2 /* FavoriteButton.swift */; };
@@ -34,6 +34,8 @@
 		D712702A2515DBD3007484D2 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71270292515DBD3007484D2 /* StorageService.swift */; };
 		D712702D2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702B2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift */; };
 		D712702E2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712702C2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift */; };
+		D72F5A5C251604D400615BB9 /* FavoriteMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F5A5B251604D400615BB9 /* FavoriteMoviePresenter.swift */; };
+		D72F5A5F2516074800615BB9 /* FavoriteMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72F5A5E2516074800615BB9 /* FavoriteMovieView.swift */; };
 		D765CF1A2513CE7B00592BDE /* TopMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */; };
 		D7E874ED2510A03B003F1C39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E874EC2510A03B003F1C39 /* AppDelegate.swift */; };
 		D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7E874F52510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld */; };
@@ -61,8 +63,8 @@
 		D70CF2DC2513C0A800351137 /* TopMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMovieViewController.swift; sourceTree = "<group>"; };
 		D71270122513D9B6007484D2 /* TopMovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieData.swift; sourceTree = "<group>"; };
 		D71270152513D9EF007484D2 /* TopMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieView.swift; sourceTree = "<group>"; };
-		D712701825148751007484D2 /* TopViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewTableViewCell.swift; sourceTree = "<group>"; };
-		D712701925148751007484D2 /* TopViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopViewTableViewCell.xib; sourceTree = "<group>"; };
+		D712701825148751007484D2 /* TopMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMovieTableViewCell.swift; sourceTree = "<group>"; };
+		D712701925148751007484D2 /* TopMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopMovieTableViewCell.xib; sourceTree = "<group>"; };
 		D712701C25148C52007484D2 /* UITableView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		D712701E25148C93007484D2 /* NibRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibRepresentable.swift; sourceTree = "<group>"; };
 		D71270202515181C007484D2 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		D71270292515DBD3007484D2 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		D712702B2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopMovieDataModel+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D712702C2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopMovieDataModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D72F5A5B251604D400615BB9 /* FavoriteMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviePresenter.swift; sourceTree = "<group>"; };
+		D72F5A5E2516074800615BB9 /* FavoriteMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieView.swift; sourceTree = "<group>"; };
 		D765CF192513CE7B00592BDE /* TopMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePresenter.swift; sourceTree = "<group>"; };
 		D7E874E92510A03B003F1C39 /* TopMoviePlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopMoviePlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E874EC2510A03B003F1C39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		D70CF2D62513BFD500351137 /* FavoriteMovie */ = {
 			isa = PBXGroup;
 			children = (
+				D72F5A5D2516073700615BB9 /* View */,
+				D72F5A5A251604B800615BB9 /* Presenter */,
 				D70CF2D72513BFF500351137 /* FavoriteMovieViewController.swift */,
 				D70CF2D82513BFF500351137 /* FavoriteMovieViewController.xib */,
 			);
@@ -171,9 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				D71270152513D9EF007484D2 /* TopMovieView.swift */,
-				D712701825148751007484D2 /* TopViewTableViewCell.swift */,
-				D712701925148751007484D2 /* TopViewTableViewCell.xib */,
-				D71270202515181C007484D2 /* FavoriteButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +195,48 @@
 				D71270292515DBD3007484D2 /* StorageService.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		D72F5A5A251604B800615BB9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D72F5A5B251604D400615BB9 /* FavoriteMoviePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D72F5A5D2516073700615BB9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D72F5A5E2516074800615BB9 /* FavoriteMovieView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D73DF74A25160A910013CEC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D73DF74C25160D660013CEC8 /* Button */,
+				D73DF74B25160AA50013CEC8 /* TableViewCell */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D73DF74B25160AA50013CEC8 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D712701825148751007484D2 /* TopMovieTableViewCell.swift */,
+				D712701925148751007484D2 /* TopMovieTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D73DF74C25160D660013CEC8 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				D71270202515181C007484D2 /* FavoriteButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		D7E874E02510A03B003F1C39 = {
@@ -265,6 +310,7 @@
 		D7E8750B2510ADE5003F1C39 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				D73DF74A25160A910013CEC8 /* Common */,
 				D70CF2D62513BFD500351137 /* FavoriteMovie */,
 				D70CF2D12513BDEA00351137 /* MainTabBar */,
 				D7E8750D2510AE6B003F1C39 /* TopMovie */,
@@ -385,7 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E874FC2510A042003F1C39 /* LaunchScreen.storyboard in Resources */,
-				D712701B25148751007484D2 /* TopViewTableViewCell.xib in Resources */,
+				D712701B25148751007484D2 /* TopMovieTableViewCell.xib in Resources */,
 				D70CF2DD2513C0A800351137 /* TopMovieViewController.xib in Resources */,
 				D7E874F92510A042003F1C39 /* Assets.xcassets in Resources */,
 				D70CF2DA2513BFF500351137 /* FavoriteMovieViewController.xib in Resources */,
@@ -444,6 +490,7 @@
 				D70CF2C22512700A00351137 /* JSONEndpoint.swift in Sources */,
 				D70CF2CB2512733800351137 /* Film.swift in Sources */,
 				D70CF2BB2512660A00351137 /* ServiceLayer.swift in Sources */,
+				D72F5A5F2516074800615BB9 /* FavoriteMovieView.swift in Sources */,
 				D70CF2CE25127D9E00351137 /* PopularFilmService.swift in Sources */,
 				D712702725152503007484D2 /* VideoService.swift in Sources */,
 				D70CF2C025126FBB00351137 /* EmptyEndpoint.swift in Sources */,
@@ -458,9 +505,10 @@
 				D7127023251522DE007484D2 /* Video.swift in Sources */,
 				D712702D2515DFD7007484D2 /* TopMovieDataModel+CoreDataClass.swift in Sources */,
 				D7E874F72510A03B003F1C39 /* TopMoviePlayer.xcdatamodeld in Sources */,
+				D72F5A5C251604D400615BB9 /* FavoriteMoviePresenter.swift in Sources */,
 				D70CF2D52513BE8400351137 /* MainTabBarController.swift in Sources */,
 				D70CF2DE2513C0A800351137 /* TopMovieViewController.swift in Sources */,
-				D712701A25148751007484D2 /* TopViewTableViewCell.swift in Sources */,
+				D712701A25148751007484D2 /* TopMovieTableViewCell.swift in Sources */,
 				D7E875072510AD8A003F1C39 /* ApplicationController.swift in Sources */,
 				D712701F25148C93007484D2 /* NibRepresentable.swift in Sources */,
 				D712702E2515DFD7007484D2 /* TopMovieDataModel+CoreDataProperties.swift in Sources */,
